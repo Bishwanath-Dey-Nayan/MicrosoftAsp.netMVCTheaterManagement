@@ -1,0 +1,87 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.cinema{
+    width:250px;
+    height:350px;
+    float:left;
+    padding:0px;
+    margin:15px;
+    border:thin solid #00ffff;
+    border-radius:20px/60px;
+    background-color:rgba(0, 0, 0, 0.20);
+    overflow:hidden;
+    position:relative;
+}
+
+.cinema h2{
+    font-size:16px;
+    line-height:16px;
+    padding:3px;
+    margin:0px;
+    padding-left:20px;
+}
+
+.cinema h3{
+    font-size:14px;
+    line-height:14px;
+    padding:3px;
+    margin:0px;
+    padding-left:10px;
+}
+
+.cinema img{
+    width:inherit;
+}
+
+.cinema p{
+    position:absolute;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    padding:10px;
+    background-color:rgba(0, 0, 0, 0.77);
+    color:white;
+    visibility:hidden;
+}
+
+.cinema:hover p{
+    visibility:visible;
+    transform:rotate(-15deg);
+    transition:all 1s;
+}
+
+.mainImage
+{
+    width:inherit;
+    margin-bottom:15px;
+}
+
+.subImage{
+    height:100px;
+    margin:10px;
+    float:left;
+}

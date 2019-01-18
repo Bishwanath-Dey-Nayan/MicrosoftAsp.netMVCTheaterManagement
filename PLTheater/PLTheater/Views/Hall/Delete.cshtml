@@ -1,0 +1,97 @@
+﻿@model PLTheater.Models.Hall
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Hall</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DPrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

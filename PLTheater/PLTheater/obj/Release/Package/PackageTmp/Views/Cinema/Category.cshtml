@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PLTheater.Models.Category>
+
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+<h2>Cinema Category</h2>
+
+
+
+<ol>
+    @foreach (var item in Model)
+    {
+        <li>@item.Name ( <a href="../../Cinema/All?category=@item.Id">@item.Cinemas.Count Cinemas</a> )</li>
+
+    }
+</ol>
+

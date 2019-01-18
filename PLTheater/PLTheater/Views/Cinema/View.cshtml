@@ -1,0 +1,113 @@
+﻿@model PLTheater.Models.Cinema
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+<h2> @Model.Name Details View</h2><hr />
+
+<div class="container row">
+
+    <div class="col-md-5" style="border:thin solid gray;">
+        @{ 
+            int i = 0;
+            foreach (var p in Model.Posters)
+            {
+                if (i == 0)
+                {
+                    <img id="mainImage" style="width:100%;" src = "../../Uploads/Posters/@(p.Id.ToString() + "_" + p.Image)" />
+                }
+
+                <img id="subImage@(i)" class="subImage" onclick="changeImage('subImage@(i++)')" src="../../Uploads/Posters/@(p.Id.ToString() + "_" + p.Image)" />
+            }
+        }
+    </div>
+    <div class="col-md-6" style="border:thin solid gray;">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Genre.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Genre.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Producer.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Producer.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Duration)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Duration)
+            </dd>
+
+            <dt>
+                <p>@Html.DisplayNameFor(model => model.Description)</p>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.IMDBLink)
+            </dt>
+
+            <dd>
+                <a href="@Model.IMDBLink">IMDB Link</a>
+            </dd>
+
+        </dl>
+    </div>
+
+    <div class="col-md-8">
+        <h1>Trailer</h1><br />
+        @Html.Raw(Model.TrailerLink)
+    </div>
+    <div class="col-md-4">
+        <h1>Show Time</h1>
+        <ul>
+        @foreach(var st in Model.ShoeTimes)
+        {
+            <li>
+                in @st.Hall.Name at @st.StartTime - @st.EndTime on @st.Date <a href="../../Cinema/Book?showtime=@st.Id&cinema=@Model.Id&hall=@st.HallId">Book Now</a>
+            </li>
+        }
+        </ul>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+
+    function changeImage(imgId)
+    {
+        document.getElementById("mainImage").setAttribute("src", document.getElementById(imgId).getAttribute("src"));
+    }
+
+</script>
+

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PLTheater.Models.Cinema>
+
+@{
+    ViewBag.Title = "All";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+<h2>All</h2>
+
+
+@foreach (var item in Model) {
+ <div class="cinema">
+     <h2><a href="../../Cinema/View?id=@item.Id">@item.Name</a></h2>
+     <h3>Genre : @item.Genre.Name, Category : @item.Category.Name</h3>
+     <h3>Producer : @item.Producer.Name, Duration : @item.Duration Minutes</h3>
+
+     @if (item.Posters.Count > 0)
+     {
+        <img src="../../Uploads/Posters/@(item.Posters.First().Id.ToString() + "_" + item.Posters.First().Image)" />
+     }
+     else
+     {
+        <img src = "../../Uploads/Posters/noposter.png" />
+     }
+
+     <p>
+         <a href="@item.IMDBLink" target="_blank">IMDB Link</a><br />
+         @item.Description
+     </p>
+
+     @{ 
+         //if in show time the Running
+     }
+
+ </div>
+
+}
+

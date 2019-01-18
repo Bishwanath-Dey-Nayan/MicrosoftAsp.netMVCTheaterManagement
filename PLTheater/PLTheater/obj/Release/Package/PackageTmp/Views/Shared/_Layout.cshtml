@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title:Theatre:Admin</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Theater Admin Panel", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Admin", "Home")</li>
+                    <li>@Html.ActionLink("Country", "Index", "Country")</li>
+                    <li>@Html.ActionLink("Category", "Index", "Category")</li>
+                    <li>@Html.ActionLink("Gender", "Index", "Gender")</li>
+                    <li>@Html.ActionLink("Member", "Index", "Member")</li>
+                    <li>@Html.ActionLink("Genre", "Index", "Genre")</li>
+                    <li>@Html.ActionLink("Producer", "Index", "Producer")</li>
+                    <li>@Html.ActionLink("Casting", "Index", "Casting")</li>
+                    <li>@Html.ActionLink("Cinema", "Index", "Cinema")</li>
+                    <li>@Html.ActionLink("Poster", "Index", "Poster")</li>
+                    <li>@Html.ActionLink("Cinema Casting", "Index", "CinemaCasting")</li>
+                    <li>@Html.ActionLink("Hall", "Index", "Hall")</li>
+                    <li>@Html.ActionLink("ShowTime", "Index", "ShowTime")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content" style="padding-top:100px;">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

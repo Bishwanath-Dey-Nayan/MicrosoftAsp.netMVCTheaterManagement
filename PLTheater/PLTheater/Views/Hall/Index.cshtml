@@ -1,0 +1,82 @@
+﻿@model IEnumerable<PLTheater.Models.Hall>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

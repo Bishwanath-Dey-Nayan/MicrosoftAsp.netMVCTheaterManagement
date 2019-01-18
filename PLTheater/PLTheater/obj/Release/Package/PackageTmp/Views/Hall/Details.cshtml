@@ -1,0 +1,91 @@
+﻿@model PLTheater.Models.Hall
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hall</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

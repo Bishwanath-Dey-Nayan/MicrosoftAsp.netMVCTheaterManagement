@@ -1,0 +1,15 @@
+﻿@model IEnumerable<PLTheater.Models.Casting>
+
+@{
+    ViewBag.Title = "Casting";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+<h2>Cinema Casting</h2>
+
+
+<ol>
+@foreach (var item in Model) {
+    <li>@item.Name (<a href="../../Cinema/All?casting=@item.Id"> @item.CinemaCasting.Count Cinemas)</a> </li>
+}
+</ol>
